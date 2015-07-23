@@ -1,0 +1,38 @@
+<section data-ng-controller="GuestsController" data-ng-init="findGuests()">
+    <div class="container-content" ng-cloak="true">
+      <tabset>
+        <button class="person-project-btn">Manage User</button>
+        <button class="btn btn-primary flatbtn" ns-popover ns-popover-template="/modules/core/views/invite_user_popover.client.view.html" ns-popover-trigger="click" ns-popover-timeout="0.2" ns-popover-placement="bottom|left" ns-popover-hide-on-click="false">
+          <span class="glyphicon glyphicon-user"></span>
+          <span class="glyphicon glyphicon-plus"></span>Invite a user to this account
+        </button>
+      </tabset>
+
+      <span class="response" ng-hide="notify" ng-bind="msg"></span>
+     
+
+      <div class="row">
+        <div class="col-md-1">
+          <img class="gravatarImg" ng-src= "{{gravatarUrl}}" />
+        </div>
+        <div class="col-md-8">
+          <div class="row" data-ng-bind="authentication.user.email"></div>
+          <div class="row" ng-if="authentication.user">Owner</div>
+        </div>
+      </div><br>
+      <div class="row" data-ng-repeat="guest in guests">
+        <div class="col-md-1">
+          <img class="gravatarImg" ng-src= "{{guest.guestGravatar}}" />
+        </div>
+        <div class="col-md-8">
+          <div class="row" data-ng-bind="guest.email"></div>
+          <div class="row" ng-if="guest.isPending">Pending</div>
+          <div class="row" ng-if="!guest.isPending">User</div>          
+        </div><br>
+        <div class="col-md-3">
+          <button class="btn btn-success flatbtn" data-ng-click="updateGuest(guest)" ng-if="guest.isPending">Resend Invitation</button>
+          <button class="btn btn-danger flatbtn" data-ng-click="removeGuest(guest)">Delete</button>
+        </div>
+      </div>
+    </div>
+</section>

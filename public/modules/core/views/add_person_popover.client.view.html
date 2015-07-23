@@ -1,0 +1,43 @@
+<ul class="popoverBox" data-ng-controller="PersonsController" ng-init="findSkills()">
+  <span class="glyphicon glyphicon-remove pull-right" data-ng-click="hidePopover()" style="margin:10px"></span>
+  <li>
+    <label for="name">Name
+      <span class="req">*</span>
+    </label>
+    <input type="text" id="name" name="name" class="form-control" ng-model="person.name" required novalidate/>
+  </li>
+  <li>
+    <label for="email">Email
+      <span class="req">*</span>
+    </label>
+    <input type="text" id="email" name="email" class="form-control" ng-model="person.email" required novalidate/>
+  </li>
+  <li>
+    <label for="group">Group</label>
+    <select data-ng-options='group for group in groupOptions' type="text" id="group" name="group" class="form-control" ng-model="person.group" required novalidate>
+    </select>
+  </li>
+  <li>
+    <label for="location">Location
+      <span class="req">*</span>
+    </label>
+    <select data-ng-options='location for location in locationOptions' type="text" id="loaction" name="location" class="form-control" ng-model="person.location" required novalidate/>
+    </select>
+  </li>
+
+  <li>
+    <label for="skill">Skills
+      <span class="req">*</span>
+    </label>
+    <ui-select multiple tagging reset-search-input="true" tagging-label="" data-ng-model="person.skill" class="form-control" required novalidate>
+      <ui-select-match placeholder="Select skills...">{{$item}}</ui-select-match>
+      <ui-select-choices repeat="skill in skillTags | filter:$select.search"> 
+          {{skill}}
+      </ui-select-choices>
+    </ui-select>
+  </li>
+
+  <br>
+  <button class="btn btn-primary flatbtn" ng-click="addPerson(hidePopover)">Add Person</button>
+</ul>
+

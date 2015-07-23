@@ -1,0 +1,286 @@
+.content {
+    margin-top: 50px;
+}
+.undecorated-link:hover {
+    text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+body {
+    font-family: 'Roboto', Arial, sans-serif !important;
+}
+
+/***************
+NAV STYLING
+***************/
+
+.navbar-default {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    margin: 2em 0;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
+    background: #FF9900;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: none;
+}
+.navbar-brand-2 {
+    padding: 0 !important;
+}
+.navbar-text {
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 28px;
+}
+
+/***************
+HOME STYLING
+***************/
+
+.img-responsive.img-center {
+    margin: 0 auto;
+}
+.questions {
+    padding-top: 40px;
+    margin: 0 auto;
+}
+div .questionTxt-last {
+    border-radius: 4px;
+    font-size: 16px;
+    font-style: normal;
+    background: #e7f4fa;
+    padding: 14px 2px 14px 12px;
+    display: block;
+}
+.description {
+    background: #f9f9f9;
+    padding: 30px;
+    margin: 20px auto;
+    margin-bottom: 50px;
+}
+.trial_two {
+    padding-top: 15px;
+}
+.free-trial {
+    background: none repeat scroll 0 0 #FF654C;
+    color: #FFF;
+}
+.free-trial:hover {
+    color: #FFF;
+    background: #e55842;
+}
+.button {
+    border-radius: 2px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    cursor: pointer;
+}
+.pricing {
+    margin: 0 auto;
+}
+.plan {
+    background: #e7f4fa;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.imgxt {
+    margin: 2.5em 0 4em;
+}
+.screenshots, .pricing {
+    border-bottom: 1px dotted #e5e5e5;
+}
+.button-last {
+    margin-top: 30px;
+}
+
+/* GRAVATAR PROFILE PIC*/
+
+.gravatarImg {
+    border-radius: 50%;
+}
+
+/*LOGO*/
+.andelaLogo {
+    height: 20px;
+}
+
+/*FOOTER CSS*/
+
+.footer {
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    background: #f9f8f8;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.footer, .footer a:link, .footer a:visited {
+    color: #bababa;
+    text-decoration: none;
+}
+p {
+    margin-bottom: 6px;
+}
+.footer a:link:hover, .footer a:visited:hover {
+    color: #ff654c;
+}
+.footer a:link .symbol, .footer a:visited .symbol {
+    background: url("/modules/core/img/logo-elabs.png") no-repeat top left;
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    margin-left: 5px;
+    text-indent: -999999px;
+    opacity: 0.5;
+}
+.footer a:link:hover .symbol, .footer a:visited:hover .symbol {
+    opacity: 1;
+}
+/**********************
+MOBILE RESPONSIVENESS
+**********************/
+
+@media (max-width: 992px) {
+    .leadingIntro {
+        text-align: center;
+        margin-bottom: 1.0em;
+    }
+    .imgxt {
+        margin: 20px auto 50px auto;
+        word-wrap: break-word;
+        width: 25em;
+    }
+    .project-description {
+        text-align: center;
+        margin-top: 10px;
+        line-height: 1.5em;
+    }
+    .mobile-username {
+        margin-left: 30px;
+    }
+}
+/*************************
+TABS
+**************************/
+
+.glyphicon {
+    margin-right: 5px;
+}
+.tabs {
+    margin-right: 20px;
+    color: black;
+    font-size: 1em;
+    background-color: #c3c3c3;
+    border-radius: 0;
+    font-weight: bold;
+    width: 120px;
+}
+a, a.home {
+    color: #000;
+    text-decoration: none;
+}
+
+.person-project-btn {
+    width: 150px;
+    height: 35px;
+    background-color: #B0B0B0;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    border: none;
+    font-weight: bolder;
+    font-size: 1em;
+    color: #fff;
+    padding: 8px;
+    outline: none;
+}
+.flatbtn {
+    border-radius: 0;
+    outline: none;
+}
+
+@-webkit-keyframes responseAlert {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.response {
+/*    display: block;*/
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    z-index: 1;
+    left: 40%;
+    background: rgba(129, 178, 8, 0.8);
+    border: 2px solid #81b208;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); 
+    -webkit-animation: responseAlert 3s;
+    -moz-animation: responseAlert 3s;
+}
+
+.errorMsg {
+/*    display: block;*/
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid red;
+    position: absolute;
+    z-index: 1;
+    left: 40%;
+    background: rgba(255, 0, 8, 0.8);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); 
+    -webkit-animation: responseAlert 3s;
+    -moz-animation: responseAlert 3s;
+}
+
+.help-block{
+    font-weight: normal;
+    font-size: 14px;
+    color: red;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+}
+
+.req {
+    color: red;
+    margin-left: 2px;
+}
+.inactive {
+    padding: 0 20px 0 25px;
+}
+.icon {
+    margin-left: 20px;
+}
+.delTask {
+    border: 1px solid black !important;
+    border-radius: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-top: 12px !important;
+    width: 85%;
+}
+

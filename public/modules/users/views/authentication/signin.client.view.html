@@ -1,0 +1,38 @@
+<section class="row" data-ng-controller="AuthenticationController">
+	<div data-ng-show="error" class="text-center text-danger">
+		<strong data-ng-bind="error"></strong>
+	</div>
+	<div class="container-fluid no-pad">
+		<h2>
+    	<strong>Please sign in </strong>below
+  	</h2>
+	</div>
+	<div class="container-fluid" style="margin-top:10px">
+		<form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off" name="userForm">
+			<fieldset>
+				<div class="form-group">
+	            <label for="email">Email address *</label>
+	            <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email">
+	             <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+	            </div><br>
+	          	<div class="form-group">
+	            <label for="password">Password *</label>
+				 <input type="password" id="password" name="password" class="form-control" ng-minlength="8" ng-maxlength="25" data-ng-model="credentials.password">
+				 <p ng-show="userForm.password.$error.minlength" class="help-block">Password is too short.</p>
+           		 <p ng-show="userForm.password.$error.maxlength" class="help-block">Password is too long.</p>
+	          	</div><br>
+	          	<div class = "form-group">
+	          	<label for="tikbox">
+	          	<input type ="checkbox" data-ng-model="credentials.me">
+	          	 Remember me
+	          	</label>
+          		</div>
+				<div class="text-center form-group">
+					<button type="submit" class="submit-button1" ng-disabled="userForm.$invalid">Sign in</button>
+				</div>
+			<div class="form-group">
+				<a href="/#!/password/forgot" class="reminder">Forgot your password?</a>
+			</div>
+			</fieldset>
+		</form>
+</section>

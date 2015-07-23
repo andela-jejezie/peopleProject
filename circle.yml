@@ -1,0 +1,14 @@
+dependencies:
+  pre:
+    - bower install
+  post:
+    - npm install grunt -g
+    - npm install grunt-cli -g
+test:
+  override:
+    - grunt test
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: calendarizeapp

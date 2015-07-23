@@ -1,0 +1,20 @@
+<ul class="popoverBox" data-ng-controller="GuestsController">
+  <span class="glyphicon glyphicon-remove pull-right" data-ng-click="hidePopover()" style="margin:10px"></span>
+  <h4>
+    <strong>Send an invitation</strong> to this account
+  </h4>
+  <li>
+    <label for="name">Name
+      <span class="req">*</span>
+    </label>
+    <input type="text" id="name" name="name" data-ng-model="guest.name" class="form-control" required novalidate/>
+  </li>
+  <li>
+    <label for="email">Email
+      <span class="req">*</span>
+    </label>
+    <input type="text" id="email" name="email" data-ng-model="guest.email" class="form-control" required novalidate/>
+  </li>
+  <br>
+  <button class="btn btn-primary flatbtn" data-ng-click="sendInvite(hidePopover)">Send Invite</button>
+</ul>

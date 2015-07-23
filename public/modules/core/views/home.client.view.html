@@ -1,0 +1,166 @@
+<section data-ng-controller="HomeController" data-ng-hide="authentication.user">
+    <div class="projectpuzzle">
+        <div class="row intro">
+            <div class="col-md-8">
+                <h2 class="leadingIntro">
+                    Keeping track of changes & people is hard.
+                    <br>Calendarize
+                    <span class="introStyle">makes it easier</span>.
+                </h2>
+            </div>
+            <div class="col-md-4">
+                <img class="img-responsive img-center" src="modules/core/img/brand/Screen Shot 1.png" alt="Project Puzzle ScreenShot">
+            </div>
+        </div>
+        <div class="row questions text-center">
+            <div class="col-sm-3">
+                <div class="row">
+                    <img class="col-sm-4" src="modules/core/img/brand/calendar.png">
+                    <span class="col-sm-8 questionTxt">
+                        When are you available?
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <img class="col-sm-4" src="modules/core/img/brand/wrench.png">
+                    <span class="col-sm-8 questionTxt">
+                        Do you have enough to do?
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <img class="col-sm-4" src="modules/core/img/brand/people.png">
+                    <span class="col-sm-8 questionTxt">
+                        Do you need more people?
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="row">
+                    <p class="questionTxt-last">
+                        Calendarize will help you answer these questions
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row description">
+            <div class="col-sm-6 text-center trial_two">
+                <a href="#!/signup">
+                    <span class="btn free-trial">Start using Calendarize in 12seconds</span>
+                </a>
+            </div>
+            <div class="col-sm-6">
+                <p class="project-description">
+                    Calendarize is a project scheduling tool.
+                    <br>By tracking your current projects and who's working on them and when, you'll have a clear picture of what's going on.
+                </p>
+            </div>
+        </div>
+        <div class="row screenshots">
+            <div class="col-md-4 text-center div_two alpha">
+                <img class="img-responsive text-center img-center" src="modules/core/img/brand/Screen Shot 2.png" alt="Calendarize ScreenShot">
+                <p class="imgxt text-center">
+                    Create projects, Add persons and many other exciting features
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img class="img-responsive text-center img-center" src="modules/core/img/brand/Screen Shot 3.png" alt="Calendarize ScreenShot">
+                <p class="imgxt text-center">
+                    Assign tasks to various persons and view their schedule at a glance.
+                </p>
+            </div>
+            <div class="col-md-4 omega">
+                <img class="img-responsive text-right img-center" src="modules/core/img/brand/Screen Shot 4.png" alt="Calendarize ScreenShot">
+                <p class="imgxt text-center">
+                    Switch between projects view or people view on the timeline. See which projects need people, or which people need projects.
+                </p>
+            </div>
+        </div>
+        <div class="row text-center trial">
+            <a href="#!/signup">
+                <span class="btn free-trial button-last">Start using Calendarize in 12seconds</span>
+            </a>
+        </div>
+    </div>
+</section>
+<section ng-controller="TasksController" ng-show="authentication.user">
+    <div class="container-content" ng-cloak="true">
+        <!-- setting Tabs-->
+        <tabset>
+            <tab class="tabs" heading="Person" data-ng-click='loadTabData("Person")'>
+            </tab>
+
+            <tab class="tabs" heading="Project" data-ng-click='loadTabData("Project")'>
+            </tab>
+            <!-- <button class="person-project-btn" ng-click="syncWithSkilltree()">Sync with Skilltree</button> -->
+            <button class="person-project-btn" ns-popover ns-popover-template="/modules/core/views/add_person_popover.client.view.html" ns-popover-trigger="click" ns-popover-timeout="0.2" ns-popover-placement="bottom|left" ns-popover-hide-on-click="false">
+                <span class="glyphicon glyphicon-folder-close"></span>
+                <span class="glyphicon glyphicon-plus"></span>Add Person
+            </button>
+
+            <button class="person-project-btn" ns-popover ns-popover-template="/modules/core/views/add_project_popover.client.view.html" ns-popover-trigger="click" ns-popover-timeout="0.2" ns-popover-placement="bottom|left" ns-popover-hide-on-click="false">
+                <span class="glyphicon glyphicon-folder-close"></span>
+                <span class="glyphicon glyphicon-plus"></span>Add Project
+            </button>
+        </tabset>
+        <!-- Tabs end-->
+        <span ng-class="responseMsg ? 'response' : 'errorMsg'" ng-hide="notify" ng-bind="msg"></span>
+        <div class="row top-buffer">
+          <div class="col-md-12">
+            <div class="panel-group" bs-collapse>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a href="" bs-collapse-toggle>Calendarize</a>
+                  </h4>
+                </div>
+                <div class="panel-collapse" bs-collapse-target>
+                    <div class="panel-body">
+                      <div gantt
+                             data="data"
+                             show-side="options.labelsEnabled"
+                             view-scale="options.scale"
+                             column-width="(options.width || options.scale === 'hour' || options.scale === 'minute') && {minute: 40, hour: 40, day: 40, week: 150, month: 300, quarter: 500, year: 800}[options.scale] || undefined"
+                             auto-expand="options.autoExpand"
+                             task-out-of-range="options.taskOutOfRange"
+                             from-date = "options.fromDate"
+                             to-date = "options.toDate"
+                             allow-side-resizing = "options.allowSideResizing"
+                             current-date="options.currentDate"
+                             current-date-value="options.currentDateValue"
+                             headers="(options.width && options.shortHeaders || options.longHeaders)"
+                             time-frames="options.timeFrames"
+                             date-frames="options.dateFrames"
+                             time-frames-non-working-mode="options.timeFramesNonWorkingMode"
+                             api="options.api"
+                             time-frames-magnet: "options.timeFramesMagnet"
+                             column-magnet="options.columnMagnet"
+                             headers-formats="options.headersFormats"
+                             template-url ="/modules/core/views/mytemplate.tmpl.html">
+                          <gantt-labels></gantt-labels>
+                          <gantt-tooltips></gantt-tooltips>
+                          <gantt-bounds></gantt-bounds>
+                          <gantt-progress></gantt-progress>
+                          <gantt-sortable></gantt-sortable>
+                          <gantt-movable 
+                              enabled="!options.readOnly",
+                              allow-row-switching="false">
+                          </gantt-movable>
+                          <gantt-draw-task
+                              enabled="options.draw && !options.readOnly"
+                              task-factory="options.drawTaskFactory">
+                          </gantt-draw-task>
+                      </div gantt>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button class="btn btn-danger pull-left flatbtn" ng-click="viewInactive()" data-ng-model='dataView'>Show inactivated {{dataView}}s</button>
+        <button class="btn btn-success pull-right flatbtn" data-ng-model='dataView'>Export to Excel</button>
+    </div>
+</section>

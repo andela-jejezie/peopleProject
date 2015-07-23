@@ -1,0 +1,39 @@
+<section class="row" data-ng-controller="AuthenticationController">
+	<div ng-if="user.verified">
+		<span>Your account has been verified, please sign in to continue</span>
+	</div>
+	<div class="container-fluid no-pad">
+		<h2>
+    		<strong>Please sign in </strong>below
+		</h2>
+	</div>
+	<div class="container-fluid" style="margin-top:10px">
+		<form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
+			<fieldset>
+				<div class="form-group">
+					<label for="email">Email address *</label>
+					<input type="text" id="email" name="email" class="form-control" data-ng-model="credentials.email">
+	            </div>
+	          	<div class="form-group">
+					<label for="password">Password *</label>
+					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password">
+	          	</div>
+	          	<div class = "form-group">
+					<label for="checkbox">
+						<input type ='checkbox' id='checkbox'data-ng-model="credentials.me">
+					 	Remember me
+					</label>
+          		</div>
+				<div class="text-center form-group">
+					<button type="submit" class="submit-button1">Sign in</button>
+				</div>
+				<div class="form-group">
+					<a href="/#!/password/forgot" class="reminder">Forgot your password?</a>
+				</div>
+				<div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</section>

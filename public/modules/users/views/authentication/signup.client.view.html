@@ -1,0 +1,54 @@
+<section class="row" data-ng-controller="AuthenticationController">
+  <h2 class="main-heading" no-pad >
+    You’re now signing up for Calendarize
+  </h2>
+    <div class="container-fluid">
+      <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
+        <fieldset>
+          <div class="form-group">
+            <label for="account-name">Account Name *</label>
+            <input type="text" required id="accountName" name="accountName" class="form-control" data-ng-model="credentials.username"><p ng-show="userForm.accountName.$invalid && !userForm.name.$pristine" class="help-block">Account name is required.</p>
+            <p class="hint">For example, your own name or the name of your company.</p>
+          </div><br>
+          <div class="form-group">
+            <label for="user-name">Your name *</label>
+            <input type="text" id="name" name="name" class="form-control" ng-minlength="3" ng-maxlength="12" data-ng-model="credentials.name"><p ng-show="userForm.name.$error.minlength" class="help-block">name is too short.</p>
+          <p ng-show="userForm.name.$error.maxlength" class="help-block">name is too long.</p>
+          </div><br>
+          <div class="form-group">
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email">
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+            <p class="hint">Will be used for login, and nothing else.</p>
+          </div><br>
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" class="form-control" ng-minlength="8" ng-maxlength="25" data-ng-model="credentials.password" data-ng-class="{'ng-invalid':userForm.confirmPassword.$error.match}">
+            <p ng-show="userForm.password.$error.minlength" class="help-block">Password is too short.</p>
+            <p ng-show="userForm.password.$error.maxlength" class="help-block">Password is too long.</p>
+          </div><br>
+          <div class="form-group">
+            <label for="password-confirm">Password confirmation *</label>
+            <input type="password" id="password" name="confirmPassword" class="form-control" data-ng-model="credentials.confirmpassword" data-match="credentials.password"><p data-ng-show="userForm.confirmPassword.$error.match" class="help-block">Passwords do not match!</p>
+          </div><br>
+          <div class = "form-group">
+          	<button type="submit" class="submit-button" ng-disabled="userForm.$invalid">Create account</button>
+        	</div>
+          <div data-ng-show="error" class="text-center text-danger">
+            <strong data-ng-bind="error"></strong>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+      
+	      <h2 class="heading"><strong>Totally </strong>free</h2>
+	      <p class="note">You can try out Calendarize even without being assigned a project and you never need to worry about payment even after being assigned to a project.</p>
+	      <h2 class="heading">When will I be <strong>billed</strong>?</h2>
+	      <p class="note">This application is totally free, thanks to the Calendarize team.</p>
+	      <h2 class="heading">Can I <strong>cancel my account</strong>?</h2>
+	      <p class="note">Yes, you can cancel your account at any time. So far you are not on any project or you are no more an Andela fellow.</p>
+	      <h2 class="heading">I have more <strong>questions</strong>  before I sign up!</h2>
+	      <p class="note">You're always welcome to contact us at <a>support@calendarize.com</a> if you have any questions about the service, or about any of our functionalities.</p>
+  </div>
+</section>
+

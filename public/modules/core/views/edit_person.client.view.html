@@ -1,0 +1,43 @@
+<ul class="popoverBox" data-ng-controller="PersonsController" ng-init="findSkills()">
+  <div class="modal-header">
+    <span class="glyphicon glyphicon-remove pull-right" data-ng-click="cancel()" style="margin:10px"></span>
+    <h3 class="modal-title">Edit Person</h3>
+  </div>    
+  <li>
+    <label for="name">Name<span class="req">*</span></label>
+    <input type="text" id="name" name="name" class="form-control" ng-model="updateData.name" required novalidate/>
+  </li>
+  <li>
+    <label for="email">Email<span class="req">*</span></label>
+    <input type="text" id="email" name="email" class="form-control" ng-model="updateData.email" required novalidate/>
+  </li>
+  <li>
+    <label for="group">Cohort</label>
+    <input type="text" id="cohort" name="cohort" class="form-control" ng-model="updateData.cohort.name" required novalidate />
+  </li>
+  <li>
+    <label for="location">Location
+      <span class="req">*</span>
+    </label>
+    <select data-ng-options='location for location in locationOptions' type="text" id="loaction" name="location" class="form-control" ng-model="updateData.location" required novalidate/>
+    </select>
+  </li>
+
+  <li>
+
+    <label for="skill">Skills
+      <span class="req">*</span>
+    </label>
+    <ui-select multiple tagging reset-search-input="true" tagging-label="" ng-model="updateData.skill" class="form-control" required novalidate>
+      <ui-select-match placeholder="Select skills...">{{$item}}</ui-select-match>
+      <ui-select-choices repeat="skill in skillTags | filter:$select.search">
+          {{skill}}
+      </ui-select-choices>
+    </ui-select>
+
+  </li>
+  <div class="modal-footer">
+    <button class="btn btn-primary pull-right flatbtn" ng-click="updateLabel()">Save</button>
+    <button class="btn btn-danger pull-left flatbtn" ng-click="deactivate()">Inactivate this Person</button>
+  </div>
+</ul>

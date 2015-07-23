@@ -1,0 +1,161 @@
+@media (max-width:992px) { }
+.container-fluid , .container-fluid-resetP,.container-fluid-resettP
+  {
+    margin-top:15px;
+    margin-left:190px;
+  }
+  strong
+  {
+    color:#62afd2;
+  }
+  .no-pad 
+  {
+    padding-left: 0
+  }
+  .reminder
+  {
+    text-decoration:underline;
+    font-style: italic;
+    padding-left: 0;
+    margin: 0 ;
+  }
+  .click{
+      color: #62afd2 !important;
+      background-color: transparent !important;
+      display: inline;
+      padding: 10px 60px 20px 60px;
+      line-height: 50px;
+      border: 3px solid #62afd2;
+      margin-left: -240px;
+      margin-right: 20px;
+      border-radius: 7.5px;
+  }
+
+.img{
+      margin-top: -10px;
+      /*margin-top: 60px;*/
+  }
+  a{
+      text-decoration: none !important;
+  }
+
+  .note
+  {
+    margin-left:190px;
+    font-weight: normal;
+    padding-right: 350px;
+  }
+  .form-control
+  {
+    width: 360px;
+    height: 32px;
+    background-color:#f9f9f9;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    padding: 8px 0 5px 9px;
+  }
+  .hint
+  {
+    font-size: 14px;
+    margin-top: -40px;
+    width: 200px;
+    margin-left:390px;
+  }
+  /************* HEADERS ***************/
+
+  h2
+  {
+  font-family: 'Oswald', sans-serif;
+  font-size: 35px;
+  line-height: 1.3;
+  font-weight: normal;
+  }
+  .heading
+  {
+   font-size:26px;
+   margin-left: 190px;
+  }
+  .main-heading
+  {
+    margin-left:190px;
+  }
+  label
+  {
+    font-weight: normal;
+  }
+/************* BUTTONS ***************/
+
+  .submit-button , .submit-button1 , .submit-button2
+  {
+  color: white;
+  background: #62afd2;
+  padding: 8px 10px;
+  border: none;
+  text-align: center;
+
+  }
+  .submit-button1 
+  {
+    float : left ;
+    width: 80px;
+    text-align: center;
+    height: 35px;
+    line-height: 0.9em;
+  }
+  .submit-button2
+  {
+    float: left;
+  }
+
+  /**************** POPOVERS*************/
+
+ a .popoverBox li , .workerPopOverBox li  {
+    border-bottom: 2px solid #f3f4f5;
+    position:relative;
+    text-decoration: none ;
+    list-style: none;
+    padding-bottom : 5px;
+    margin-bottom: 5px ;
+    font-family: 'oswald' sans-serif;
+    font-size: 1em;
+    color : #33f;
+  }
+ a .popoverBox li , .workerPopOverBox li :hover { 
+    color:#33a;
+  }
+  .popoverBox , .workerPopOverBox {
+    background: #FFF;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+    position: absolute;
+    z-index: 100;
+    padding: 15px;
+    text-decoration: none;
+    list-style: none;
+  }
+  .workerPopOverBox a li {
+    text-decoration: none;
+  }
+  .workerPopOverBox
+  {
+    width : 100px;
+    padding : 10px;
+    text-align: center;  
+  }
+  label
+  {
+    padding : 10px;
+  }
+  .test
+  {
+    background-color: grey;
+    width : 200px;
+  }
+  .icon
+  {
+    top:0;
+    bottom:0;
+    padding-bottom:10px;
+    float : right;
+    width: 20px;
+  }
+  

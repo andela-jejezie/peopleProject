@@ -1,0 +1,18 @@
+<section>
+  <div class="modal-header">
+      <span class="glyphicon glyphicon-remove pull-right" data-ng-click="cancel()" style="margin:10px"></span>
+      <h3 class="modal-title" data-ng-model="state">Archived {{state}}s</h3>
+  </div>
+  <div class="modal-body">
+    <h5 data-ng-if="datas.length === 0">There are currently no inactive {{state}}s </h5>
+    <div class="row" data-ng-repeat= "data in datas">
+      <h4 class="inactive">
+        <span>{{data.name}}</span>
+        <span class="pull-right">
+            <button class="btn btn-success flatbtn" ng-click="activateData(data)">Activate</button>
+            <button class="btn btn-danger flatbtn" ng-click="deleteData(data)">Delete {{state}}</button>
+        </span>
+      </h4>
+    </div>
+  </div>
+</section>
